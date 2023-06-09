@@ -4,8 +4,8 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - baseRed: {fileID: 9016932680488895152, guid: e450a31c99d0fd9459353752d01d0c6a, type: 3}
-  - circleRed: {fileID: 3376505174617110051, guid: 45be878cb3c19974f83caabb57fb86f5, type: 3}
+  - baseRed: {instanceID: 0}
+  - circleRedPrefab: {fileID: 3376505174617110051, guid: 45be878cb3c19974f83caabb57fb86f5, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
