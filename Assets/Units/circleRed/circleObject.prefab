@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1238012634682562463}
   - component: {fileID: 724985601195579315}
   m_Layer: 0
-  m_Name: circleRedObject
+  m_Name: circleObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,8 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deltaTimeMove: 0.0125
   moveDistance: 0.0125
-  circleRedObject: {fileID: 1238012634682562463}
-  initialTimeMove: 0.0125
+  thisUnit: {fileID: 1238012634682562463}
+  previousTimeMove: 0
 --- !u!50 &1238012634682562463
 Rigidbody2D:
   serializedVersion: 4
@@ -58,7 +58,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5131802446769145912}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -119,7 +119,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: 46a6bbb0d229bbc4d9dc779e1c6273ed, type: 3}
-  m_Color: {r: 0.8301887, g: 0.003915994, b: 0.003915994, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

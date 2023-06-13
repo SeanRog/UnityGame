@@ -5,16 +5,18 @@ using UnityEngine;
 public class BaseRedHandler : MonoBehaviour
 {
     [SerializeField] private GameObject circleRedObject;
-		[SerializeField] private Rigidbody2D baseRed;
+    [SerializeField] private GameObject triangleRedObject;
+    [SerializeField] private Rigidbody2D baseRed;
     [SerializeField] private float deltaTimeSpawn = 1.0f;
     [SerializeField] private float previousTimeSpawn = 0.0f;
-    // Start is called before the first frame update
+
+	private int spawnCount = 0;
+		
     void Start()
     {
         SpawnNewCircle();
     }
 
-    // Update is called once per frame
     void Update()
     {
         SpawnNewCircleIfShouldSpawn();
@@ -30,7 +32,20 @@ public class BaseRedHandler : MonoBehaviour
     }
 
     private void SpawnNewCircle() {
-        GameObject circleInstance = Instantiate(circleRedObject, baseRed.position, Quaternion.identity);
-        // currentCircleRigidBody = circleInstance.GetComponent<Rigidbody2D>();
+        if (spawnCount % 3 == 0) {
+            GameObject circleInstance = Instantiate(circleRedObject, baseRed.position, Quaternion.identity);
+            circleInstance.tag = "CircleRed";
+            SpriteRenderer circleSprite = circleInstance.GetComponent<SpriteRenderer>();
+            circleSprite.color = Color.yellow;
+
+        } else if (spawnCount % 3 == 1){
+            GameObject triangleInstance = Instantiate(triangleRedObject, baseRed.position, Quaternion.identity);
+        } else {
+            GameObject squareInstance = Instantiate(triangleRedObject, baseRed.position, Quaternion.identity);
+            SpriteRenderer sqaureSprite = squareInstance.GetComponent<SpriteRenderer>();
+            sqaureSprite.sprite = Sprite.Create(new Texture2D(100, 75), new Rect(0, 0, 100, 75), Vector2.one * 0.5f);
+            sqaureSprite.color = Color.blue;
+        }
+        spawnCount++;
     }
 }
